@@ -1,5 +1,5 @@
 var click = false;
-var scale;
+//var scale;
 
 // Component that places model where the ground is clicked
 AFRAME.registerComponent('tap-place', {
