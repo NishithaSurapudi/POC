@@ -1,4 +1,4 @@
-var click = false;
+//var click = false;
 //var scale;
 
 // Component that places model where the ground is clicked
@@ -6,8 +6,6 @@ AFRAME.registerComponent('tap-place', {
     init: function () {
         const ground = document.getElementById('ground')
         ground.addEventListener('click', event => {
-            if (!click) {
-                click = true
                 // Create new entity for the new object
                 const newElement = document.createElement('a-entity')
                 // The raycaster gives a location of the touch in the scene
@@ -20,12 +18,11 @@ AFRAME.registerComponent('tap-place', {
                 newElement.addEventListener('model-loaded', () => {
                     newElement.setAttribute('visible', 'true')
                 })
-            }
         })
     }
 })
 
-/*A-frame component that allows user to scale the model placed*/
+/*A-frame component that allows user to scale the model placed
 
 AFRAME.registerComponent('pinch-scale', {
     schema: {
@@ -55,6 +52,6 @@ AFRAME.registerComponent('pinch-scale', {
         gltfModel.object3D.scale.y = this.scaleFactor * this.initialScale.y;
         gltfModel.object3D.scale.z = this.scaleFactor * this.initialScale.z;
     }
-});
+});*/
 
 
