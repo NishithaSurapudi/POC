@@ -47,6 +47,7 @@ AFRAME.registerComponent('pinch-scale', {
         this.scaleFactor *= 1 + event.detail.spreadChange / event.detail.startSpread;
         this.scaleFactor = Math.min(Math.max(this.scaleFactor, this.data.min), this.data.max);
         var gltfModel;
+        var scale;
         if (click) {
             gltfModel = document.getElementById('model');
         }
