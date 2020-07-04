@@ -44,6 +44,10 @@ AFRAME.registerComponent('two-finger-spin', {
 
     },
     handleEvent: function(event) {
+        var gltfModel;
+            if (isplaced) {
+                gltfModel = document.getElementById('model');
+            }
       this.el.object3D.rotation.y += event.detail.positionChange.x * this.data.factor
     }
   });
