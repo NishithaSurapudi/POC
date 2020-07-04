@@ -1,5 +1,7 @@
 // Component that places model where the ground is clicked
 var isplaced = false;
+var scene = document.querySelector('a-scene');
+
 AFRAME.registerComponent('tap-place', {
     init: function () {
         const ground = document.getElementById('ground')
@@ -26,6 +28,7 @@ AFRAME.registerComponent('tap-place', {
         })
     }
 });
+
 AFRAME.registerComponent('two-finger-spin', {
     schema: {
       factor: {default: 5}
@@ -33,28 +36,15 @@ AFRAME.registerComponent('two-finger-spin', {
     init: function() {
       this.handleEvent = this.handleEvent.bind(this)
       this.el.sceneEl.addEventListener('twofingermove', this.handleEvent)
-     // this.el.sceneEl.addEventListener('onefingerswipe', this.handleEvent)
-
-      //this.el.sceneEl.addEventListener('rightswipe',this.handleevent)
-      //this.el.sceneEl.addEventListener('leftswipe',this.handleEvent)
     },
     remove: function() {
       this.el.sceneEl.removeEventListener('twofingermove', this.handleEvent)
-      //this.el.sceneEl.removeEventListener('twofingerswipe', this.handleEvent)
-
-      //this.el.sceneEl.addEventListener('rightswipe',this.handleevent)
-      //this.el.sceneEl.addEventListener('leftswipe',this.handleEvent)
-
     },
     handleEvent: function(event) {
-        var gltfModel;
-            if (isplaced) {
-                gltfModel = document.getElementById('model');
-            }
       this.el.object3D.rotation.y += event.detail.positionChange.x * this.data.factor
     }
   });
-  var scale='0 0 0';
+
 AFRAME.registerComponent('pinch-scale', {
     schema: {
         min: { default: 5 },
@@ -78,8 +68,7 @@ AFRAME.registerComponent('pinch-scale', {
         var gltfModel;
         
         if (isplaced) {
-                        console.log('hi')
-
+            console.log('hi')
             gltfModel = document.getElementById('model');
         }
         gltfModel.object3D.scale.x = this.scaleFactor * this.initialScale.x;
