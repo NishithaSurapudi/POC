@@ -54,7 +54,7 @@ AFRAME.registerComponent('two-finger-spin', {
       this.el.object3D.rotation.y += event.detail.positionChange.x * this.data.factor
     }
   });
-  var scale;
+  var scale=scale;
 AFRAME.registerComponent('pinch-scale', {
     schema: {
         min: { default: 5 },
