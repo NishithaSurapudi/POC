@@ -20,6 +20,9 @@
                             clip:'model',
                             loop:'once'
                         })
+                        newElement.addEventListener('model-loaded',() => {
+                            newElement.setAttribute('visible','false')
+                        })
                     })
                 //})
             }
