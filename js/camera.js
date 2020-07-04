@@ -1,5 +1,5 @@
         // Component that places model where the ground is clicked
-        var arCamera = document.getElementById('aCamera');
+        var isplaced= false;
 
         AFRAME.registerComponent('tap-place', {
             init: function() {
@@ -15,15 +15,17 @@
                     newElement.setAttribute('gltf-model', '#model')
                     this.el.sceneEl.appendChild(newElement)
                     //newElement.addEventListener('model-loaded', () => {
+                        if(!isplaced){
+                            const newElement = document.createElement('a-entity')
+                                newElement.setAttribute('isplaced','true')
+                            
+                        }
                         newElement.setAttribute('visible', 'true')
                         newElement.setAttribute('Animation-mixer',{
                             clip:'model',
                             loop:'once'
                         })
-                        newElement.addEventListener('model-loaded',() => {
-                            newElement.setAttribute('visible','false')
                         })
-                    })
                 //})
             }
             
