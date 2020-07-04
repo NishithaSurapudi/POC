@@ -1,6 +1,5 @@
 // Component that places model where the ground is clicked
 var isplaced = false;
-//var scale;
 AFRAME.registerComponent('tap-place', {
     init: function () {
         const ground = document.getElementById('ground')
@@ -55,6 +54,7 @@ AFRAME.registerComponent('two-finger-spin', {
       this.el.object3D.rotation.y += event.detail.positionChange.x * this.data.factor
     }
   });
+  var scale;
 AFRAME.registerComponent('pinch-scale', {
     schema: {
         min: { default: 5 },
