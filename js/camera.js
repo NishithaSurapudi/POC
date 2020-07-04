@@ -1,6 +1,6 @@
 // Component that places model where the ground is clicked
 var isplaced = false;
-var scene = document.querySelector('a-scene');
+//var scene = document.querySelector('a-scene');
 
 AFRAME.registerComponent('tap-place', {
     init: function () {
@@ -54,6 +54,7 @@ AFRAME.registerComponent('pinch-scale', {
     init: function () {
         this.initialScale = this.el.object3D.scale.clone()
         this.scaleFactor = 1
+        this.scale = '0 0 0'
         this.handleEvent = this.handleEvent.bind(this)
         this.el.sceneEl.addEventListener('twofingermove', this.handleEvent)
     },
@@ -68,7 +69,6 @@ AFRAME.registerComponent('pinch-scale', {
         var gltfModel;
         
         if (isplaced) {
-            console.log('hi')
             gltfModel = document.getElementById('model');
         }
         gltfModel.object3D.scale.x = this.scaleFactor * this.initialScale.x;
