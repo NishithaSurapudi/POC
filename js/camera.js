@@ -15,19 +15,17 @@ AFRAME.registerComponent('tap-place', {
                 newElement.setAttribute('visible', 'false')
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('gltf-model', '#model')
-                console.log('hi')
                 this.el.sceneEl.appendChild(newElement)
-                //newElement.addEventListener('model-loaded', () => {
-                newElement.setAttribute('visible', 'true')
-                newElement.setAttribute('Animation-mixer', {
-                    clip: 'model',
-                    loop: 'once'
+                newElement.addEventListener('model-loaded', () => {
+                    newElement.setAttribute('visible', 'true')
+                    newElement.setAttribute('Animation-mixer', {
+                        clip: 'model',
+                        loop: 'once'
+                    })
                 })
             }
-
         })
     }
-
 })
 AFRAME.registerComponent('pinch-scale', {
     schema: {
@@ -54,7 +52,7 @@ AFRAME.registerComponent('pinch-scale', {
             gltfModel = document.getElementById('model');
         }
 
-        
+
         gltfModel.object3D.scale.x = this.scaleFactor * this.initialScale.x;
         gltfModel.object3D.scale.y = this.scaleFactor * this.initialScale.y;
         gltfModel.object3D.scale.z = this.scaleFactor * this.initialScale.z;
