@@ -78,6 +78,8 @@ AFRAME.registerComponent('pinch-scale', {
         var gltfModel;
         
         if (isplaced) {
+                        console.log('hi')
+
             gltfModel = document.getElementById('model');
         }
         gltfModel.object3D.scale.x = this.scaleFactor * this.initialScale.x;
