@@ -13,7 +13,7 @@
     </script>
     <script defer src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
-    <script src="./js/pinch-scale.js"></script>
+    <!--<script src="./js/pinch-scale.js"></script>-->
     <script src="./js/gesture-detector.js"></script>
     <script src="./js/two-finger-spin.js"></script>
     <script src="./js/camera.js"></script>
@@ -29,8 +29,8 @@
         <a-entity light="type:hemisphere;" position="1 1 0.0001" id="ar-light">
         </a-entity>
 
-        <a-entity  gltf-model="#model" class="cantap" animation-mixer two-finger-spin pinch-scale scale="0.3 0.3 0.3" ></a-entity>
-        <!--Adding the cantap class allows the ground to be clicked -->
+        <!--<a-entity  gltf-model="#model" class="cantap" animation-mixer two-finger-spin pinch-scale scale="0.3 0.3 0.3" ></a-entity>
+        Adding the cantap class allows the ground to be clicked -->
         <a-entity id="ground" class="cantap" geometry="primitive: box" material="color: #ffffff; transparent: true; opacity: 0.0" scale="1000 2 1000" position="0 -1 0">
         </a-entity>
     </a-scene>
