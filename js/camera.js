@@ -1,6 +1,6 @@
 // Component that places model where the ground is clicked
 var isplaced = false;
-
+var scale;
 AFRAME.registerComponent('tap-place', {
     init: function () {
         const ground = document.getElementById('ground')
@@ -76,6 +76,7 @@ AFRAME.registerComponent('pinch-scale', {
         this.scaleFactor *= 1 + event.detail.spreadChange / event.detail.startSpread;
         this.scaleFactor = Math.min(Math.max(this.scaleFactor, this.data.min), this.data.max);
         var gltfModel;
+        
         if (isplaced) {
             gltfModel = document.getElementById('model');
         }
