@@ -73,7 +73,6 @@ AFRAME.registerComponent('pinch-scale', {
     },
 
     handleEvent: function (event) {
-        var scale =any;
         this.scaleFactor *= 1 + event.detail.spreadChange / event.detail.startSpread;
         this.scaleFactor = Math.min(Math.max(this.scaleFactor, this.data.min), this.data.max);
         var gltfModel;
@@ -81,8 +80,8 @@ AFRAME.registerComponent('pinch-scale', {
         if (isplaced) {
             gltfModel = document.getElementById('model');
         }
-        gltfModel.object3D.scale.x = this.scaleFactor * this.initialScale.x;
-        gltfModel.object3D.scale.y = this.scaleFactor * this.initialScale.y;
-        gltfModel.object3D.scale.z = this.scaleFactor * this.initialScale.z;
+        //gltfModel.object3D.scale.x = this.scaleFactor * this.initialScale.x;
+        //gltfModel.object3D.scale.y = this.scaleFactor * this.initialScale.y;
+       // gltfModel.object3D.scale.z = this.scaleFactor * this.initialScale.z;
     }
 });
