@@ -15,7 +15,7 @@
                     newElement.setAttribute('gltf-model', '#model')
                     this.el.sceneEl.appendChild(newElement)
                     //newElement.addEventListener('model-loaded', () => {
-                        newElement.setAttribute('visible', 'true')
+                        newElement.setAttribute('visible', 'false')
                         newElement.setAttribute('Animation-mixer',{
                             clip:'model',
                             loop:'once'
