@@ -18,7 +18,8 @@
 
 </head>
 <body>
-    <a-scene xrweb tap-place gesture-detector pinch-scale two-finger-spin xrextras-almost-there xrextras-loading xrextras-runtime-error >
+    <a-scene xrweb tap-place gesture-detector pinch-scale two-finger-spin xrextras-almost-there xrextras-loading xrextras-runtime-error
+    inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
       <a-asset-item id="model" src="./assets/model.gltf" ></a-asset-item>
 
         <a-camera position="0 8 0" id="aCamera" raycaster="objects: .cantap" cursor=" fuse: false;rayOrigin: mouse;" light="intensity:1" id="aCamera">
