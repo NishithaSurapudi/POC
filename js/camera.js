@@ -13,6 +13,8 @@ AFRAME.registerComponent('tap-place', {
                 // The raycaster gives a location of the touch in the scene
                 const touchPoint = event.detail.intersection.point
                 newElement.setAttribute('position', touchPoint)
+                const randomYRotation = Math.random() * 360
+                newElement.setAttribute('rotation', '0 ' + randomYRotation + ' 0')
                 newElement.setAttribute('visible', 'false')
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('gltf-model', '#model')
