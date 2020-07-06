@@ -17,7 +17,7 @@ AFRAME.registerComponent('tap-place', {
                 //const randomYRotation = Math.random() * 360
                 newElement.setAttribute('visible', 'false')
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
-                newElement.setAttribute('id','model')
+                newElement.setAttribute('id','modelID')
                 newElement.setAttribute('gltf-model', '#model')
                 //newElement.setAttribute('rotation', arCamera.components.rotation)
                 this.el.sceneEl.appendChild(newElement)
@@ -48,7 +48,7 @@ AFRAME.registerComponent('two-finger-spin', {
         var gltfModel;
         
         if (isplaced) {
-            gltfModel = document.getElementById('model');
+            gltfModel = document.getElementById('modelID');
         }
       gltfModel.object3D.rotation.y += event.detail.positionChange.x * this.data.factor
     }
@@ -77,7 +77,7 @@ AFRAME.registerComponent('two-finger-spin', {
         this.scaleFactor = Math.min(Math.max(this.scaleFactor, this.data.min), this.data.max);
         var gltfModel;
         if (isplaced) {
-            gltfModel = document.getElementById('model');
+            gltfModel = document.getElementById('modelID');
         }
 
         gltfModel.object3D.scale.x = this.scaleFactor * this.initialScale.x;
