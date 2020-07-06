@@ -52,7 +52,8 @@ AFRAME.registerComponent('two-finger-spin', {
     }
   });
 
-AFRAME.registerComponent('pinch-scale', {
+
+  AFRAME.registerComponent('pinch-scale', {
     schema: {
         min: { default: 5 },
         max: { default: 100 }
@@ -61,7 +62,6 @@ AFRAME.registerComponent('pinch-scale', {
     init: function () {
         this.initialScale = this.el.object3D.scale.clone()
         this.scaleFactor = 1
-        this.scale = '0 0 0'
         this.handleEvent = this.handleEvent.bind(this)
         this.el.sceneEl.addEventListener('twofingermove', this.handleEvent)
     },
@@ -74,12 +74,12 @@ AFRAME.registerComponent('pinch-scale', {
         this.scaleFactor *= 1 + event.detail.spreadChange / event.detail.startSpread;
         this.scaleFactor = Math.min(Math.max(this.scaleFactor, this.data.min), this.data.max);
         var gltfModel;
-        
         if (isplaced) {
             gltfModel = document.getElementById('model');
         }
+
         gltfModel.object3D.scale.x = this.scaleFactor * this.initialScale.x;
         gltfModel.object3D.scale.y = this.scaleFactor * this.initialScale.y;
-       gltfModel.object3D.scale.z = this.scaleFactor * this.initialScale.z;
+        gltfModel.object3D.scale.z = this.scaleFactor * this.initialScale.z;
     }
 });
