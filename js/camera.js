@@ -29,7 +29,7 @@ AFRAME.registerComponent('tap-place', {
             }
         })
     }
-});
+})
 
 AFRAME.registerComponent('two-finger-spin', {
     schema: {
@@ -50,9 +50,9 @@ AFRAME.registerComponent('two-finger-spin', {
         }
       gltfModel.object3D.rotation.y += event.detail.positionChange.x * this.data.factor
     }
-  });
+  })
 
-/*AFRAME.registerComponent('pinch-scale', {
+AFRAME.registerComponent('pinch-scale', {
     schema: {
         min: { default: 5 },
         max: { default: 100 }
@@ -82,4 +82,4 @@ AFRAME.registerComponent('two-finger-spin', {
         gltfModel.object3D.scale.y = this.scaleFactor * this.initialScale.y;
        gltfModel.object3D.scale.z = this.scaleFactor * this.initialScale.z;
     }
-});*/
+});
