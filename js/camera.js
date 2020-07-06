@@ -1,6 +1,7 @@
-// Component that places model where the ground is clicked
 var isplaced = false;
+var arCamera = document.getElementById('aCamera');
 //var scene = document.querySelector('a-scene');
+// Component that places model where the ground is clicked
 
 AFRAME.registerComponent('tap-place', {
     init: function () {
@@ -14,7 +15,7 @@ AFRAME.registerComponent('tap-place', {
                 const touchPoint = event.detail.intersection.point
                 newElement.setAttribute('position', touchPoint)
                 //const randomYRotation = Math.random() * 360
-                //newElement.setAttribute('rotation', '0 ' + randomYRotation + ' 0')
+                newElement.setAttribute('rotation', arCamera.components.rotation)
                 newElement.setAttribute('visible', 'false')
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('gltf-model', '#model')
