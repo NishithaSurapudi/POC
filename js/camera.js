@@ -15,7 +15,7 @@ AFRAME.registerComponent('tap-place', {
                 const touchPoint = event.detail.intersection.point
                 newElement.setAttribute('position', touchPoint)
                 //const randomYRotation = Math.random() * 360
-                newElement.setAttribute('rotation', arCamera.components.rotation)
+                newElement.setAttribute('rotation', arCamera.rotation)
                 newElement.setAttribute('visible', 'false')
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('gltf-model', '#model')
