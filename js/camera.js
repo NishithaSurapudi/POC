@@ -19,7 +19,7 @@ AFRAME.registerComponent('tap-place', {
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('id','model')
                 newElement.setAttribute('gltf-model', '#model')
-                newElement.setAttribute('rotation', arCamera.components.rotation)
+                //newElement.setAttribute('rotation', arCamera.components.rotation)
                 this.el.sceneEl.appendChild(newElement)
                 newElement.addEventListener('model-loaded', () => {
                     newElement.setAttribute('visible', 'true')
