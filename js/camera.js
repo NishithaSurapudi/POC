@@ -29,7 +29,7 @@ AFRAME.registerComponent('tap-place', {
             }
         })
     }
-})
+});
 
 AFRAME.registerComponent('two-finger-spin', {
     schema: {
@@ -50,7 +50,7 @@ AFRAME.registerComponent('two-finger-spin', {
         }
       gltfModel.object3D.rotation.y += event.detail.positionChange.x * this.data.factor
     }
-  })
+  });
 
 AFRAME.registerComponent('pinch-scale', {
     schema: {
