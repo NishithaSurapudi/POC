@@ -3,7 +3,7 @@ var isplaced = false;
 var arCamera = document.getElementById('aCamera');
 //var scene = document.querySelector('a-scene');
 // Component that places model where the ground is clicked
-window.AFRAME.registerComponent('xrweb', XR8.AFrame.xrwebComponent())
+//window.AFRAME.registerComponent('xrweb', XR8.AFrame.xrwebComponent())
 AFRAME.registerComponent('tap-place', {
     init: function () {
         const ground = document.getElementById('ground')
