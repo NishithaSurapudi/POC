@@ -12,7 +12,7 @@ AFRAME.registerComponent('tap-place', {
             if (!isplaced) {
                 isplaced = true;
                 const newElement = document.createElement('a-entity')
-                const newElement = document.getElementsByTagName('a-scene')
+                const xrweb = document.getElementsByTagName('a-scene')
                 // The raycaster gives a location of the touch in the scene
                 const touchPoint = event.detail.intersection.point
                 newElement.setAttribute('position', touchPoint)
