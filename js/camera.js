@@ -1,8 +1,9 @@
+
 var isplaced = false;
 var arCamera = document.getElementById('aCamera');
 //var scene = document.querySelector('a-scene');
 // Component that places model where the ground is clicked
-
+window.AFRAME.registerComponent('xrweb', XR8.AFrame.xrwebComponent())
 AFRAME.registerComponent('tap-place', {
     init: function () {
         const ground = document.getElementById('ground')
@@ -19,6 +20,7 @@ AFRAME.registerComponent('tap-place', {
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('id','modelID')
                 newElement.setAttribute('gltf-model', '#model')
+                console.log(xrweb)
                 //newElement.setAttribute('rotation', arCamera.components.rotation)
                 this.el.sceneEl.appendChild(newElement)
                 newElement.addEventListener('model-loaded', () => {
