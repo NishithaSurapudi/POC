@@ -21,7 +21,7 @@ AFRAME.registerComponent('tap-place', {
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('id','modelID')
                 newElement.setAttribute('gltf-model', '#model')
-                const xrweb = document.getElementsByTagName('a-scene')
+                 const xrweb = document.getElementsByTagName('a-scene')
                 console.log(document.getElementsByTagName('a-scene')[0].attributes)
                // console.log(xrweb)
                 //newElement.setAttribute('rotation', arCamera.components.rotation)
@@ -62,8 +62,8 @@ AFRAME.registerComponent('two-finger-spin', {
 
   AFRAME.registerComponent('pinch-scale', {
     schema: {
-        min: { default: 3 },
-        max: { default: 10}
+        min: { default: 0.3 },
+        max: { default: 8}
     },
 
     init: function () {
@@ -88,6 +88,5 @@ AFRAME.registerComponent('two-finger-spin', {
         gltfModel.object3D.scale.x = this.scaleFactor * this.initialScale.x;
         gltfModel.object3D.scale.y = this.scaleFactor * this.initialScale.y;
         gltfModel.object3D.scale.z = this.scaleFactor * this.initialScale.z;
-
     }
 });
