@@ -31,7 +31,7 @@ AFRAME.registerComponent('tap-place', {
                     newElement.setAttribute('Animation-mixer', {
                         clip: 'run_*',
                         delay:'5000',
-                        loop: 'once',
+                        loop: 'pingpong',
                     })
                 });
             }
