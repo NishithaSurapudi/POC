@@ -23,16 +23,17 @@ AFRAME.registerComponent('tap-place', {
                 newElement.setAttribute('gltf-model', '#model')
                  const xrweb = document.getElementsByTagName('a-scene')
                 console.log(document.getElementsByTagName('a-scene')[0].attributes)
-               // console.log(xrweb)
-                //newElement.setAttribute('rotation', arCamera.components.rotation)
                 this.el.sceneEl.appendChild(newElement)
                 newElement.addEventListener('model-loaded', () => {
                     newElement.setAttribute('visible', 'true')
-                    newElement.setAttribute('Animation-mixer', {
-                        //clip: 'model_walk',
-                        //delay:'5000',
-                        //loop: 'repeat',
+                    setTimeout(() =>{
+                        newElement.setAttribute('Animation-mixer', {
+                            //clip: 'model_walk',
+                            //delay:'5000',
+                            //loop: 'repeat',
+                        },5000)
                     })
+                    
                 });
             }
         })
