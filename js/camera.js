@@ -29,9 +29,9 @@ AFRAME.registerComponent('tap-place', {
                 newElement.addEventListener('model-loaded', () => {
                     newElement.setAttribute('visible', 'true')
                     newElement.setAttribute('Animation-mixer', {
-                        clip: 'model_walk',
-                        delay:'5000',
-                        loop: 'repeat',
+                        //clip: 'model_walk',
+                        //delay:'5000',
+                        //loop: 'repeat',
                     })
                 });
             }
