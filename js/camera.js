@@ -18,7 +18,7 @@ AFRAME.registerComponent('tap-place', {
                 newElement.setAttribute('position', touchPoint)
                 //const randomYRotation = Math.random() * 360
                 newElement.setAttribute('visible', 'false')
-                newElement.setAttribute('scale', '0.8 0.8 0.8')
+                newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('id','modelID')
                 newElement.setAttribute('gltf-model', '#model')
                 const xrweb = document.getElementsByTagName('a-scene')
@@ -58,6 +58,7 @@ AFRAME.registerComponent('two-finger-spin', {
       gltfModel.object3D.rotation.y += event.detail.positionChange.x * this.data.factor
     }
   });
+
 
   AFRAME.registerComponent('pinch-scale', {
     schema: {
