@@ -62,7 +62,7 @@ AFRAME.registerComponent('two-finger-spin', {
 
   AFRAME.registerComponent('pinch-scale', {
     schema: {
-        min: { default: 1.2 },
+        min: { default: 0.3 },
         max: { default: 8}
     },
 
