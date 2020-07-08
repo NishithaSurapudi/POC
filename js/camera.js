@@ -12,8 +12,7 @@ AFRAME.registerComponent('tap-place', {
             if (!isplaced) {
                 isplaced = true;
                 const newElement = document.createElement('a-entity')
-                const xrweb = document.getElementsByTagName('a-scene')
-                console.log(document.getElementsByTagName('a-scene')[0].attributes)
+               
                 // The raycaster gives a location of the touch in the scene
                 const touchPoint = event.detail.intersection.point
                 newElement.setAttribute('position', touchPoint)
@@ -22,6 +21,8 @@ AFRAME.registerComponent('tap-place', {
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('id','modelID')
                 newElement.setAttribute('gltf-model', '#model')
+                const xrweb = document.getElementsByTagName('a-scene')
+                console.log(document.getElementsByTagName('a-scene')[0].attributes)
                // console.log(xrweb)
                 //newElement.setAttribute('rotation', arCamera.components.rotation)
                 this.el.sceneEl.appendChild(newElement)
