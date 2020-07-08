@@ -79,7 +79,7 @@ AFRAME.registerComponent('two-finger-spin', {
 
     handleEvent: function (event) {
         this.scaleFactor *= 1 + event.detail.spreadChange / event.detail.startSpread;
-        this.scaleFactor = Math.max(Math.max(this.scaleFactor, this.data.min), this.data.max);
+        this.scaleFactor = Math.min(Math.max(this.scaleFactor, this.data.min), this.data.max);
         var gltfModel;
         if (isplaced) {
             gltfModel = document.getElementById('modelID');
