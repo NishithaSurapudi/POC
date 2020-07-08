@@ -18,7 +18,7 @@ AFRAME.registerComponent('tap-place', {
                 newElement.setAttribute('position', touchPoint)
                 //const randomYRotation = Math.random() * 360
                 newElement.setAttribute('visible', 'false')
-                newElement.setAttribute('scale', '0.3 0.3 0.3')
+                newElement.setAttribute('scale', '4 4 4')
                 newElement.setAttribute('id','modelID')
                 newElement.setAttribute('gltf-model', '#model')
                 const xrweb = document.getElementsByTagName('a-scene')
@@ -62,8 +62,8 @@ AFRAME.registerComponent('two-finger-spin', {
 
   AFRAME.registerComponent('pinch-scale', {
     schema: {
-        min: { default: 0.3 },
-        max: { default: 8}
+        min: { default: 5 },
+        max: { default: 100}
     },
 
     init: function () {
