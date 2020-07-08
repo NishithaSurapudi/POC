@@ -19,7 +19,10 @@
 </head>
 <body>
     <a-scene xrweb tap-place gesture-detector pinch-scale two-finger-spin xrextras-almost-there xrextras-loading xrextras-runtime-error>     
-         <a-asset-item id="model" src="./assets/model.gltf" ></a-asset-item>
+        <a-entity>
+            <a-animation attribute="position" from="1 1 1" to="2 4 -8"></a-animation>
+            <a-asset-item id="model" src="./assets/model.gltf" ></a-asset-item> 
+        </a-entity>
          <a-camera position="0 8 0" raycaster="objects: .cantap" cursor="
          fuse: false;
          rayOrigin: mouse;" light="intensity:1" id="aCamera">
