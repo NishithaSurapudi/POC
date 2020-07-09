@@ -1,9 +1,6 @@
 
 var isplaced = false;
-var arCamera = document.getElementById('aCamera');
-//var scene = document.querySelector('a-scene');
 // Component that places model where the ground is clicked
-//window.AFRAME.registerComponent('xrweb', XR8.AFrame.xrwebComponent())
 AFRAME.registerComponent('tap-place', {
     init: function () {
         const ground = document.getElementById('ground')
@@ -16,21 +13,23 @@ AFRAME.registerComponent('tap-place', {
                 // The raycaster gives a location of the touch in the scene
                 const touchPoint = event.detail.intersection.point
                 newElement.setAttribute('position', touchPoint)
-                //const randomYRotation = Math.random() * 360
                 newElement.setAttribute('visible', 'false')
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('id','modelID')
                 newElement.setAttribute('gltf-model', '#model')
-                 const xrweb = document.getElementsByTagName('a-scene')
+                //const xrweb = document.getElementsByTagName('a-scene')
                 console.log(document.getElementsByTagName('a-scene')[0].attributes)
                 this.el.sceneEl.appendChild(newElement)
+                var that = this;
+                setTimeout(function(){
+                    that.setAttribute('Animation-mixer', {
+                         clip: 'model'
+                     }.bind(this),5000);
+                 });
+                 setTimeout(that.function(),5000);
                 newElement.addEventListener('model-loaded', () => {
                     newElement.setAttribute('visible', 'true')
-                    setTimeout(function(){
-                       this.setAttribute('Animation-mixer', {
-                            clip: 'model'
-                        }.bind(this),5000);
-                    })
+                    
                     
                 });
             }
