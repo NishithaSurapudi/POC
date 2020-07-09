@@ -26,12 +26,11 @@ AFRAME.registerComponent('tap-place', {
                 this.el.sceneEl.appendChild(newElement)
                 newElement.addEventListener('model-loaded', () => {
                     newElement.setAttribute('visible', 'true')
-                    var data = newElement.setAttribute('Animation-mixer', {
-                        clip: 'model_walk',
-                        //loop: 'repeat',
-                    })
                     setTimeout(() => {
-                       this.function(data)
+                        newElement.setAttribute('Animation-mixer', {
+                            clip: 'model_walk',
+                            loop: 'once',
+                        })
                     }, 5000);
                     
                 });
