@@ -17,16 +17,15 @@ AFRAME.registerComponent('tap-place', {
                 newElement.setAttribute('scale', '0.3 0.3 0.3')
                 newElement.setAttribute('id','modelID')
                 newElement.setAttribute('gltf-model', '#model')
-                //const xrweb = document.getElementsByTagName('a-scene')
-                console.log(document.getElementsByTagName('a-scene')[0].attributes)
-                this.el.sceneEl.appendChild(newElement)
-                var that = this;
+                var that = this.newElement;
                 setTimeout(function(){
                     that.setAttribute('Animation-mixer', {
                          clip: 'model'
                      }.bind(this),5000);
                  });
-                 setTimeout(that.function(),5000);
+                 //setTimeout(that.function(),5000);
+                console.log(document.getElementsByTagName('a-scene')[0].attributes)
+                this.el.sceneEl.appendChild(newElement)              
                 newElement.addEventListener('model-loaded', () => {
                     newElement.setAttribute('visible', 'true')
                     
